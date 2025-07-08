@@ -14,6 +14,7 @@ setup_ampl <- function(ampl_path) {
   ampl_suffix <- switch (machine_ident,
     'Linuxx86_64' = 'ampl.linux64',
     'Darwinx86_64' = 'ampl.macosx64',
+    'Darwin_arm64' = 'ampl.macosx64',
     stop('Cannot infer the operating system your are using. Autodownload failed.')
   )
   ampl_download_url <- paste0('https://ampl.com/demo/', ampl_suffix, '.tgz')

@@ -42,7 +42,7 @@ Install the package by executing
 
 ``` r
 if (!require('devtools')) install.packages('devtools')
-devtools::install_github('behavioral-ds/evently')
+devtools::install_github('AITrophy/evently')
 ```
 
 ## Simulating cascades

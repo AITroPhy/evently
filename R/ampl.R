@@ -29,14 +29,14 @@ setup_ampl <- function(ampl_path) {
   #            to = ampl_final_path)
 
   # download ipopt
-  ipopt_download_url <- switch (machine_ident,
-    'Linuxx86_64' = 'https://ampl.com/dl/open/ipopt/ipopt-linux64.zip',
-    'Darwinx86_64' = 'https://ampl.com/dl/open/ipopt/ipopt-osx.zip',
-    stop('Failed to guess the operating system you are using. Autodownload failed.')
-  )
-  download_file(ipopt_download_url, destfile = '/tmp/ipopt.zip')
-  unzip(zipfile = '/tmp/ipopt.zip', exdir = ampl_final_path)
-  Sys.chmod(paste0(ampl_final_path, '/ipopt'), '777', use_umask = FALSE)
+  # ipopt_download_url <- switch (machine_ident,
+  #   'Linuxx86_64' = 'https://ampl.com/dl/open/ipopt/ipopt-linux64.zip',
+  #   'Darwinx86_64' = 'https://ampl.com/dl/open/ipopt/ipopt-osx.zip',
+  #   stop('Failed to guess the operating system you are using. Autodownload failed.')
+  # )
+  # download_file(ipopt_download_url, destfile = '/tmp/ipopt.zip')
+  # unzip(zipfile = '/tmp/ipopt.zip', exdir = ampl_final_path)
+  # Sys.chmod(paste0(ampl_final_path, '/ipopt'), '777', use_umask = FALSE)
 
   # add ampl to path environment
   write(paste0('AMPL_PATH=', ampl_final_path), file = paste0(Sys.getenv('HOME'), '/.Renviron'), append = TRUE)
